@@ -2,24 +2,22 @@ package com.sherin.attendancetracker
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 
-class SplashActivity : AppCompatActivity() {
+class SignupActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_splash)
+        setContentView(R.layout.activity_signup)
 
-        Handler(Looper.getMainLooper()).postDelayed({
+        val tvLogin = findViewById<TextView>(R.id.tvLogin)
 
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
+        tvLogin.setOnClickListener {
+            startActivity(Intent(this, LoginActivity::class.java))
             finish()
-
-        }, 2000)
+        }
     }
 }
