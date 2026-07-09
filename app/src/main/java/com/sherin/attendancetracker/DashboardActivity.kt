@@ -19,5 +19,6 @@ class DashboardActivity : AppCompatActivity() {
             startActivity(intent)
 
         }
+
     }
 }

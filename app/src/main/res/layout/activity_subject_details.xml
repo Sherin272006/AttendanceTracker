@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:id="@+id/tvSubjectName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Subject Name"
+            android:textStyle="bold"
+            android:textSize="28sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Attendance"
+            android:layout_marginTop="24dp"/>
+
+        <TextView
+            android:id="@+id/tvAttendance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0%"
+            android:textStyle="bold"
+            android:textSize="36sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Minimum Attendance Required"
+            android:layout_marginTop="24dp"/>
+
+        <TextView
+            android:id="@+id/tvMinimumAttendance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="75%"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Attended Classes"
+            android:layout_marginTop="24dp"/>
+
+        <TextView
+            android:id="@+id/tvAttendedClasses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Conducted Classes"
+            android:layout_marginTop="16dp"/>
+
+        <TextView
+            android:id="@+id/tvConductedClasses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Classes You Can Skip"
+            android:layout_marginTop="24dp"/>
+
+        <TextView
+            android:id="@+id/tvSkipClasses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/btnPresent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Present"
+            android:layout_marginTop="32dp"/>
+
+        <Button
+            android:id="@+id/btnAbsent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Absent"
+            android:layout_marginTop="16dp"/>
+
+        <Button
+            android:id="@+id/btnReset"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reset Attendance"
+            android:layout_marginTop="16dp"/>
+
+    </LinearLayout>
+
+</ScrollView>

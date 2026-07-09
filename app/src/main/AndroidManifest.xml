@@ -12,7 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AttendanceTracker">
         <activity android:name=".MainActivity" />
-
         <activity
             android:name=".SplashActivity"
             android:exported="true">
@@ -22,21 +21,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
-
         <activity
             android:name=".SignupActivity"
             android:exported="false" />
-
         <activity
             android:name=".DashboardActivity"
             android:exported="false" />
-
         <activity
             android:name=".AddSubjectActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".SubjectDetailsActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>
