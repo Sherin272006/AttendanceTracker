@@ -41,6 +41,9 @@ dependencies {
     // Firebase
     implementation(platform("com.google.firebase:firebase-bom:34.2.0"))
     implementation("com.google.firebase:firebase-auth")
+    implementation("com.google.firebase:firebase-database")
+
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
 
     implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.appcompat)

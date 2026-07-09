@@ -63,6 +63,20 @@
             android:layout_height="wrap_content"
             android:text="Add Subject"
             android:layout_marginTop="24dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="My Subjects"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvSubjects"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"/>
     </LinearLayout>
 
 </ScrollView>

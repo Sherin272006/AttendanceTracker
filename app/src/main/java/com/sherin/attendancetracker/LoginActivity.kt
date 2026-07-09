@@ -60,9 +60,10 @@ class LoginActivity : AppCompatActivity() {
                             Toast.LENGTH_LONG
                         ).show()
 
-                        // Dashboard will be added later
-
-                    } else {
+                        val intent = Intent(this, DashboardActivity::class.java)
+                        startActivity(intent)
+                        finish()
+                    }else {
 
                         Toast.makeText(
                             this,
