@@ -1,75 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#121212">
+    android:fillViewport="true"
+    android:background="#181825">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="24dp">
+        android:gravity="center_horizontal"
+        android:paddingStart="28dp"
+        android:paddingEnd="28dp"
+        android:paddingTop="70dp"
+        android:paddingBottom="24dp">
+
+        <!-- Welcome -->
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Attendance Tracker"
-            android:textSize="30sp"
-            android:textStyle="bold"
+            android:text="Welcome Back 👋"
             android:textColor="#BB86FC"
-            android:layout_gravity="center"
-            android:layout_marginTop="70dp"
-            android:layout_marginBottom="50dp"/>
+            android:textStyle="bold"
+            android:textSize="34sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="Track your attendance effortlessly."
+            android:textColor="#CFCFCF"
+            android:textSize="17sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign in to continue."
+            android:textColor="#CFCFCF"
+            android:textSize="17sp"/>
+
+        <!-- Email -->
 
         <EditText
             android:id="@+id/etEmail"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/rounded_edittext"
             android:hint="Email"
-            android:inputType="textEmailAddress"
+            android:paddingStart="18dp"
             android:textColor="#FFFFFF"
-            android:textColorHint="#BBBBBB"
-            android:backgroundTint="#BB86FC"/>
+            android:textColorHint="#BDBDBD"
+            android:inputType="textEmailAddress"/>
+
+        <!-- Password -->
 
         <EditText
             android:id="@+id/etPassword"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/rounded_edittext"
             android:hint="Password"
-            android:inputType="textPassword"
+            android:paddingStart="18dp"
             android:textColor="#FFFFFF"
-            android:textColorHint="#BBBBBB"
-            android:backgroundTint="#BB86FC"/>
+            android:textColorHint="#BDBDBD"
+            android:inputType="textPassword"/>
+
+        <!-- Login Button -->
 
         <Button
             android:id="@+id/btnLogin"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_height="62dp"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/rounded_button"
             android:text="Login"
+            android:textAllCaps="false"
             android:textColor="#FFFFFF"
-            android:backgroundTint="#BB86FC"/>
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+        <!-- Forgot Password -->
 
         <TextView
             android:id="@+id/tvForgotPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
             android:text="Forgot Password?"
-            android:textColor="#FFFFFF"
-            android:layout_gravity="center"
-            android:layout_marginTop="15dp"/>
+            android:textColor="#BB86FC"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
 
-        <TextView
-            android:id="@+id/tvCreateAccount"
+        <!-- Create Account -->
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Create Account"
-            android:textColor="#BB86FC"
-            android:textStyle="bold"
+            android:layout_marginTop="18dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Don't have an account? "
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:id="@+id/tvCreateAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Create Account"
+                android:textColor="#BB86FC"
+                android:textStyle="bold"
+                android:textSize="15sp"/>
+
+        </LinearLayout>
+
+        <!-- Illustration -->
+
+        <ImageView
+            android:id="@+id/imgLoginIllustration"
+            android:layout_width="230dp"
+            android:layout_height="230dp"
+            android:layout_marginTop="8dp"
             android:layout_gravity="center"
-            android:layout_marginTop="15dp"/>
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/login_illustration"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="16dp"
+            android:text="Built for Students"
+            android:textColor="#BDBDBD"
+            android:textSize="20sp"/>
 
     </LinearLayout>
 

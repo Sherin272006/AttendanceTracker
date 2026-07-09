@@ -1,68 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#181825">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="24dp">
+        android:gravity="center_horizontal"
+        android:paddingStart="28dp"
+        android:paddingEnd="28dp"
+        android:paddingTop="50dp"
+        android:paddingBottom="24dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Welcome 👋"
+            android:textColor="#BB86FC"
+            android:textSize="30sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:text="Create Account"
-            android:textSize="28sp"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:layout_marginTop="40dp"
-            android:layout_marginBottom="30dp"/>
+            android:textColor="#FFFFFF"
+            android:textSize="32sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="Join Attendance Tracker today.\nCreate your account to continue."
+            android:textAlignment="center"
+            android:textColor="#CFCFCF"
+            android:textSize="15sp"/>
 
         <EditText
             android:id="@+id/etName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Full Name"/>
+            android:layout_height="60dp"
+            android:layout_marginTop="35dp"
+            android:background="@drawable/rounded_edittext"
+            android:hint="Full Name"
+            android:paddingStart="18dp"
+            android:textColor="#BB86FC"
+            android:textColorHint="#9E9E9E"/>
 
         <EditText
             android:id="@+id/etEmail"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/rounded_edittext"
             android:hint="Email"
-            android:inputType="textEmailAddress"/>
+            android:inputType="textEmailAddress"
+            android:paddingStart="18dp"
+            android:textColor="#BB86FC"
+            android:textColorHint="#9E9E9E"/>
 
         <EditText
             android:id="@+id/etPassword"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/rounded_edittext"
             android:hint="Password"
-            android:inputType="textPassword"/>
+            android:inputType="textPassword"
+            android:paddingStart="18dp"
+            android:textColor="#BB86FC"
+            android:textColorHint="#9E9E9E"/>
 
         <EditText
             android:id="@+id/etConfirmPassword"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/rounded_edittext"
             android:hint="Confirm Password"
-            android:inputType="textPassword"/>
+            android:inputType="textPassword"
+            android:paddingStart="18dp"
+            android:textColor="#BB86FC"
+            android:textColorHint="#9E9E9E"/>
 
         <Button
             android:id="@+id/btnSignup"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:text="Create Account"/>
+            android:layout_height="60dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/rounded_button"
+            android:text="Create Account"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
 
-        <TextView
-            android:id="@+id/tvLogin"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Already have an account? Login"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginTop="22dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Already have an account? "
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:id="@+id/tvLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Login"
+                android:textColor="#BB86FC"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp"
+            android:text="Built for Students"
+            android:textColor="#BDBDBD"
+            android:textSize="15sp"/>
 
     </LinearLayout>
 
