@@ -1,64 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddSubjectActivity">
+    android:background="#121212">
 
-
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="28dp"
+        android:paddingTop="50dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="24dp">
+            android:text="Add Subject"
+            android:textColor="#BB86FC"
+            android:textStyle="bold"
+            android:textSize="30sp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Add Subject"
-                android:textStyle="bold"
-                android:textSize="28sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create a new subject for attendance tracking."
+            android:textColor="#BDBDBD"
+            android:textSize="15sp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="30dp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Subject Name"
-                android:layout_marginTop="24dp"/>
+        <!-- Subject Name -->
 
-            <EditText
-                android:id="@+id/etSubjectName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Enter subject name"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Subject Name"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="16sp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Minimum Attendance (%)"
-                android:layout_marginTop="20dp"/>
+        <EditText
+            android:id="@+id/etSubjectName"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_edittext"
+            android:hint="Enter Subject Name"
+            android:padding="15dp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#9E9E9E"/>
 
-            <EditText
-                android:id="@+id/etMinimumAttendance"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Example: 75"
-                android:inputType="number"/>
+        <!-- Minimum Attendance -->
 
-            <Button
-                android:id="@+id/btnSaveSubject"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Add Subject"
-                android:layout_marginTop="32dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Minimum Attendance (%)"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="24dp"/>
 
-        </LinearLayout>
+        <EditText
+            android:id="@+id/etMinimumAttendance"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_edittext"
+            android:hint="Example : 75"
+            android:inputType="number"
+            android:padding="15dp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#9E9E9E"/>
 
-    </ScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- Button -->
+
+        <Button
+            android:id="@+id/btnSaveSubject"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="35dp"
+            android:background="@drawable/rounded_button"
+            android:text="Add Subject"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="17sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+</ScrollView>

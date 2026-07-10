@@ -5,16 +5,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
-    app:cardCornerRadius="12dp"
-    app:cardElevation="4dp">
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    app:cardCornerRadius="18dp"
+    app:cardElevation="6dp"
+    app:cardBackgroundColor="#1E1E1E">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:padding="16dp">
+        android:gravity="center_vertical"
+        android:padding="18dp">
 
         <TextView
             android:id="@+id/tvSubjectName"
@@ -22,6 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Java"
+            android:textColor="#FFFFFF"
             android:textSize="18sp"
             android:textStyle="bold"/>
 
@@ -29,7 +32,8 @@
             android:id="@+id/tvAttendance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0%"
+            android:text="0/0"
+            android:textColor="#BB86FC"
             android:textSize="18sp"
             android:textStyle="bold"/>
 
