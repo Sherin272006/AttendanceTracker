@@ -11,78 +11,45 @@
         android:padding="24dp">
 
         <TextView
-            android:id="@+id/tvSubjectName"
+            android:id="@+id/tvSubjectTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Subject Name"
-            android:textStyle="bold"
-            android:textSize="28sp"/>
+            android:text="Subject"
+            android:textSize="28sp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Attendance"
+            android:textStyle="bold"
+            android:textSize="20sp"
             android:layout_marginTop="24dp"/>
 
         <TextView
-            android:id="@+id/tvAttendance"
+            android:id="@+id/tvAttendancePercentage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0%"
+            android:textSize="36sp"
             android:textStyle="bold"
-            android:textSize="36sp"/>
+            android:layout_marginTop="8dp"/>
 
         <TextView
+            android:id="@+id/tvPresent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Minimum Attendance Required"
-            android:layout_marginTop="24dp"/>
+            android:text="Present Classes : 0"
+            android:layout_marginTop="24dp"
+            android:textSize="18sp"/>
 
         <TextView
-            android:id="@+id/tvMinimumAttendance"
+            android:id="@+id/tvConducted"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="75%"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Attended Classes"
-            android:layout_marginTop="24dp"/>
-
-        <TextView
-            android:id="@+id/tvAttendedClasses"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Conducted Classes"
-            android:layout_marginTop="16dp"/>
-
-        <TextView
-            android:id="@+id/tvConductedClasses"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Classes You Can Skip"
-            android:layout_marginTop="24dp"/>
-
-        <TextView
-            android:id="@+id/tvSkipClasses"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0"
-            android:textStyle="bold"/>
+            android:text="Conducted Classes : 0"
+            android:layout_marginTop="12dp"
+            android:textSize="18sp"/>
 
         <Button
             android:id="@+id/btnPresent"
@@ -96,13 +63,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Absent"
-            android:layout_marginTop="16dp"/>
-
-        <Button
-            android:id="@+id/btnReset"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Reset Attendance"
             android:layout_marginTop="16dp"/>
 
     </LinearLayout>

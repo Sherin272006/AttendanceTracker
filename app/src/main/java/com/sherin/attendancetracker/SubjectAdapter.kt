@@ -8,7 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.sherin.attendancetracker.model.Subject
 
 class SubjectAdapter(
-    private val subjectList: ArrayList<Subject>
+    private val subjectList: ArrayList<Subject>,
+    private val onItemClick: (Subject) -> Unit
 ) : RecyclerView.Adapter<SubjectAdapter.SubjectViewHolder>() {
 
     class SubjectViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -35,6 +36,12 @@ class SubjectAdapter(
 
         holder.tvAttendance.text =
             "${subject.attendedClasses}/${subject.conductedClasses}"
+
+        holder.itemView.setOnClickListener {
+
+            onItemClick(subject)
+
+        }
 
     }
 
