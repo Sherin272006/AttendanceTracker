@@ -10,35 +10,35 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="28dp"
-        android:paddingTop="50dp">
+        android:padding="24dp">
 
-        <!-- Subject Title -->
+        <!-- Subject Name -->
 
         <TextView
             android:id="@+id/tvSubjectTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Subject"
+            android:text="Java Programming"
             android:textColor="#BB86FC"
+            android:textSize="30sp"
             android:textStyle="bold"
-            android:textSize="30sp"/>
+            android:layout_marginTop="20dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Track your attendance in real time."
+            android:text="Track your attendance effortlessly."
             android:textColor="#BDBDBD"
             android:textSize="15sp"
-            android:layout_marginTop="6dp"
-            android:layout_marginBottom="24dp"/>
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="20dp"/>
 
         <!-- Attendance Card -->
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="170dp"
-            app:cardCornerRadius="20dp"
+            app:cardCornerRadius="18dp"
             app:cardElevation="6dp"
             app:cardBackgroundColor="#1E1E1E">
 
@@ -51,39 +51,49 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Attendance"
-                    android:textColor="#BDBDBD"
+                    android:text="Current Attendance"
+                    android:textColor="#BBBBBB"
                     android:textSize="16sp"/>
 
                 <TextView
                     android:id="@+id/tvAttendancePercentage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0%"
+                    android:text="87%"
                     android:textColor="#BB86FC"
+                    android:textSize="48sp"
                     android:textStyle="bold"
-                    android:textSize="50sp"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_marginTop="8dp"/>
+
+                <TextView
+                    android:id="@+id/tvAttendanceStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🟢 Excellent Attendance"
+                    android:textColor="#4CAF50"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    android:layout_marginTop="8dp"/>
 
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
 
-        <!-- Statistics Card -->
+        <!-- Details Card -->
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             app:cardCornerRadius="18dp"
-            app:cardElevation="5dp"
+            app:cardElevation="4dp"
             app:cardBackgroundColor="#1E1E1E">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="18dp">
+                android:padding="20dp">
 
                 <TextView
                     android:id="@+id/tvPresent"
@@ -100,7 +110,7 @@
                     android:text="Conducted Classes : 0"
                     android:textColor="#FFFFFF"
                     android:textSize="17sp"
-                    android:layout_marginTop="14dp"/>
+                    android:layout_marginTop="12dp"/>
 
                 <TextView
                     android:id="@+id/tvMinimumAttendance"
@@ -109,7 +119,7 @@
                     android:text="Minimum Attendance : 75%"
                     android:textColor="#FFFFFF"
                     android:textSize="17sp"
-                    android:layout_marginTop="14dp"/>
+                    android:layout_marginTop="12dp"/>
 
                 <TextView
                     android:id="@+id/tvSkippableClasses"
@@ -118,8 +128,18 @@
                     android:text="You can skip 0 classes."
                     android:textColor="#BB86FC"
                     android:textStyle="bold"
-                    android:textSize="18sp"
-                    android:layout_marginTop="16dp"/>
+                    android:textSize="17sp"
+                    android:layout_marginTop="18dp"/>
+
+                <TextView
+                    android:id="@+id/tvNeedToAttend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📚 Attend next 0 classes to reach minimum attendance."
+                    android:textColor="#03DAC5"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_marginTop="12dp"/>
 
             </LinearLayout>
 
@@ -131,34 +151,50 @@
             android:id="@+id/btnPresent"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/rounded_button"
-            android:text="Present"
+            android:layout_marginTop="28dp"
+            android:text="✓ Present"
             android:textAllCaps="false"
-            android:textColor="#FFFFFF"
             android:textStyle="bold"
-            android:textSize="17sp"/>
+            android:textColor="#FFFFFF"
+            android:textSize="17sp"
+            android:backgroundTint="#4CAF50"/>
 
         <Button
             android:id="@+id/btnAbsent"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/rounded_button"
-            android:text="Absent"
+            android:layout_marginTop="14dp"
+            android:text="✗ Absent"
             android:textAllCaps="false"
-            android:textColor="#FFFFFF"
             android:textStyle="bold"
-            android:textSize="17sp"/>
+            android:textColor="#FFFFFF"
+            android:textSize="17sp"
+            android:backgroundTint="#F44336"/>
+
+        <Button
+            android:id="@+id/btnCalendar"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="14dp"
+            android:text="📅 Attendance Calendar"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:textSize="17sp"
+            android:background="@drawable/rounded_button"/>
 
         <Button
             android:id="@+id/btnDeleteSubject"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Delete Subject"
-            android:layout_marginTop="24dp"
-            android:backgroundTint="#D32F2F"
-            android:textColor="#FFFFFF"/>
+            android:layout_height="55dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginBottom="30dp"
+            android:text="🗑 Delete Subject"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:textSize="17sp"
+            android:backgroundTint="#E53935"/>
 
     </LinearLayout>
 

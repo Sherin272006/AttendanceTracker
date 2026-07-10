@@ -50,7 +50,7 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.core.ktx)
     implementation(libs.material)
-
+    implementation("com.kizitonwose.calendar:view:2.5.0")
 
     implementation("com.google.code.gson:gson:2.10.1")
 
