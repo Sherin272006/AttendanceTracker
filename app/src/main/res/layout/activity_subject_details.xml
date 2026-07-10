@@ -50,6 +50,21 @@
             android:text="Conducted Classes : 0"
             android:layout_marginTop="12dp"
             android:textSize="18sp"/>
+        <TextView
+            android:id="@+id/tvMinimumAttendance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Minimum Attendance : 75%"
+            android:layout_marginTop="12dp"
+            android:textSize="18sp"/>
+        <TextView
+            android:id="@+id/tvSkippableClasses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="You can skip 0 classes."
+            android:layout_marginTop="12dp"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
 
         <Button
             android:id="@+id/btnPresent"

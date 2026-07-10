@@ -26,9 +26,12 @@ class SubjectDetailsActivity : AppCompatActivity() {
         val tvAttendancePercentage = findViewById<TextView>(R.id.tvAttendancePercentage)
         val tvPresent = findViewById<TextView>(R.id.tvPresent)
         val tvConducted = findViewById<TextView>(R.id.tvConducted)
+        val tvMinimumAttendance = findViewById<TextView>(R.id.tvMinimumAttendance)
+        val tvSkippableClasses = findViewById<TextView>(R.id.tvSkippableClasses)
         val btnPresent = findViewById<Button>(R.id.btnPresent)
         val btnAbsent = findViewById<Button>(R.id.btnAbsent)
         val firebaseKey = intent.getStringExtra("firebaseKey") ?: ""
+        val minimumAttendance = intent.getIntExtra("minimumAttendance", 75)
         val subjectName = intent.getStringExtra("subjectName") ?: ""
         val attendedClasses = intent.getIntExtra("attendedClasses", 0)
         val conductedClasses = intent.getIntExtra("conductedClasses", 0)
@@ -36,6 +39,7 @@ class SubjectDetailsActivity : AppCompatActivity() {
         tvSubjectTitle.text = subjectName
         tvPresent.text = "Present Classes : $attendedClasses"
         tvConducted.text = "Conducted Classes : $conductedClasses"
+        tvMinimumAttendance.text = "Minimum Attendance : $minimumAttendance%"
 
         val percentage =
             if (conductedClasses == 0) {
@@ -45,6 +49,28 @@ class SubjectDetailsActivity : AppCompatActivity() {
             }
 
         tvAttendancePercentage.text = "$percentage%"
+
+        var skippableClasses = 0
+
+        while (true) {
+
+            val futureAttendance =
+                (attendedClasses * 100.0) / (conductedClasses + skippableClasses + 1)
+
+            if (futureAttendance >= minimumAttendance) {
+                skippableClasses++
+            } else {
+                break
+            }
+
+        }
+
+        tvSkippableClasses.text =
+            if (skippableClasses == 1) {
+                "You can skip 1 class."
+            } else {
+                "You can skip $skippableClasses classes."
+            }
 
         btnPresent.setOnClickListener {
 

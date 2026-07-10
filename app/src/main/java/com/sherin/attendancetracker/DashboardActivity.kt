@@ -7,6 +7,7 @@ import com.sherin.attendancetracker.model.Subject
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
@@ -55,17 +56,27 @@ class DashboardActivity : AppCompatActivity() {
         loadSubjects()
 
         val btnAddSubject = findViewById<Button>(R.id.btnAddSubject)
+        val btnProfile = findViewById<ImageButton>(R.id.btnProfile)
         btnAddSubject.setOnClickListener {
 
             val intent = Intent(this, AddSubjectActivity::class.java)
             startActivity(intent)
 
         }
-    }
-        override fun onResume() {
-            super.onResume()
-            loadSubjects()
+
+        btnProfile.setOnClickListener {
+
+            android.widget.Toast.makeText(
+                this,
+                "Profile clicked",
+                android.widget.Toast.LENGTH_SHORT
+            ).show()
+
+            startActivity(Intent(this, ProfileActivity::class.java))
+
         }
+
+    }
 
         private fun loadSubjects() {
 

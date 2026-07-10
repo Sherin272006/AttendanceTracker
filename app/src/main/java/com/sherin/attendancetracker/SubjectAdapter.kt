@@ -34,8 +34,14 @@ class SubjectAdapter(
 
         holder.tvSubjectName.text = subject.subjectName
 
-        holder.tvAttendance.text =
-            "${subject.attendedClasses}/${subject.conductedClasses}"
+        val percentage =
+            if (subject.conductedClasses == 0) {
+                0
+            } else {
+                (subject.attendedClasses * 100) / subject.conductedClasses
+            }
+
+        holder.tvAttendance.text = "$percentage%"
 
         holder.itemView.setOnClickListener {
 
