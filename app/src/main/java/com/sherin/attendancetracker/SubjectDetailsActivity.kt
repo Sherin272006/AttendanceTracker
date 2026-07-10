@@ -30,6 +30,7 @@ class SubjectDetailsActivity : AppCompatActivity() {
         val tvSkippableClasses = findViewById<TextView>(R.id.tvSkippableClasses)
         val btnPresent = findViewById<Button>(R.id.btnPresent)
         val btnAbsent = findViewById<Button>(R.id.btnAbsent)
+        val btnDeleteSubject = findViewById<Button>(R.id.btnDeleteSubject)
         val firebaseKey = intent.getStringExtra("firebaseKey") ?: ""
         val minimumAttendance = intent.getIntExtra("minimumAttendance", 75)
         val subjectName = intent.getStringExtra("subjectName") ?: ""
@@ -131,6 +132,38 @@ class SubjectDetailsActivity : AppCompatActivity() {
                     finish()
 
                 }
+
+        }
+        btnDeleteSubject.setOnClickListener {
+
+            androidx.appcompat.app.AlertDialog.Builder(this)
+                .setTitle("Delete Subject")
+                .setMessage("Are you sure you want to delete this subject?")
+                .setPositiveButton("Delete") { _, _ ->
+
+                    val currentUser = auth.currentUser ?: return@setPositiveButton
+
+                    database.reference
+                        .child("Users")
+                        .child(currentUser.uid)
+                        .child("Subjects")
+                        .child(firebaseKey)
+                        .removeValue()
+                        .addOnSuccessListener {
+
+                            Toast.makeText(
+                                this,
+                                "Subject deleted successfully",
+                                Toast.LENGTH_SHORT
+                            ).show()
+
+                            finish()
+
+                        }
+
+                }
+                .setNegativeButton("Cancel", null)
+                .show()
 
         }
 
