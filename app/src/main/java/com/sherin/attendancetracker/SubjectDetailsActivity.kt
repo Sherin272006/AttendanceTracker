@@ -42,6 +42,7 @@ class SubjectDetailsActivity : AppCompatActivity() {
         val btnAbsent = findViewById<Button>(R.id.btnAbsent)
         val btnCalendar = findViewById<Button>(R.id.btnCalendar)
         val btnDeleteSubject = findViewById<Button>(R.id.btnDeleteSubject)
+        val btnResetAttendance = findViewById<Button>(R.id.btnResetAttendance)
 
         val firebaseKey = intent.getStringExtra("firebaseKey") ?: ""
 
@@ -77,7 +78,24 @@ class SubjectDetailsActivity : AppCompatActivity() {
 
             tvConducted.text =
                 "Conducted Classes : $conductedClasses"
+
+
             // Attendance Status
+            if (conductedClasses == 0) {
+
+                tvAttendanceStatus.text = "⚪ No Attendance Data"
+                tvAttendanceStatus.setTextColor(
+                    Color.parseColor("#BDBDBD")
+                )
+
+                tvSkippableClasses.text =
+                    "📅 No classes have been conducted yet."
+
+                tvNeedToAttend.text =
+                    "Attendance will be calculated after your first class."
+
+                return
+            }
 
             when {
 
@@ -352,7 +370,44 @@ class SubjectDetailsActivity : AppCompatActivity() {
                 .show()
 
         }
+        btnResetAttendance.setOnClickListener {
+
+            androidx.appcompat.app.AlertDialog.Builder(this)
+                .setTitle("Reset Attendance")
+                .setMessage("This will reset all attendance data for this subject. Continue?")
+                .setPositiveButton("Reset") { _, _ ->
+
+                    val currentUser = auth.currentUser ?: return@setPositiveButton
+
+                    val subjectRef = database.reference
+                        .child("Users")
+                        .child(currentUser.uid)
+                        .child("Subjects")
+                        .child(firebaseKey)
+
+                    subjectRef.child("attendedClasses").setValue(0)
+                    subjectRef.child("conductedClasses").setValue(0)
+                    subjectRef.child("attendanceHistory").removeValue()
+                        .addOnSuccessListener {
+
+                            attendedClasses = 0
+                            conductedClasses = 0
+
+                            updateUI()
+
+                            Toast.makeText(
+                                this,
+                                "Attendance reset successfully",
+                                Toast.LENGTH_SHORT
+                            ).show()
+
+                        }
+
+                }
+                .setNegativeButton("Cancel", null)
+                .show()
+
+        }
 
     }
-
 }
